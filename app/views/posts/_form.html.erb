@@ -1,0 +1,22 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <div class="mb-4">
+    <%= form.label :title, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= form.text_field :title, class: 'shadow-lg appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-bold' %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :author, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= form.text_field :author, class: 'shadow-lg appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :body, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= form.text_area :body, class: 'shadow-lg appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.submit 'Submit', id: 'submit-button', class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline', data: { disable_with: 'Criando...' } %>
+  </div>
+<% end %>
+
+

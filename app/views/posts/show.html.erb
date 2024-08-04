@@ -1,0 +1,14 @@
+<div class="bg-grey-200 mt-10 shadow-lg rounded-lg p-6 mb-6 max-w-3xl mx-auto">
+  <h1 class="text-3xl font-bold text-gray-900 mb-4 text-center">
+    <%= @post.title %>
+  </h1>
+
+  <div class="text-gray-600 mb-4 flex flex-col items-center">
+    <strong class="font-semibold">Por <%= @post.author %></strong>
+    <span class="text-sm text-gray-500"><%= l @post.created_at, format: :long %></span>
+  </div>
+
+  <p class="text-gray-800 leading-relaxed text-start">
+    <%= @post.body.gsub("\n", "<br>").html_safe %>
+  </p>
+</div>
