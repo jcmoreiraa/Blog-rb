@@ -12,12 +12,18 @@
   <body class="bg-gray-100">
     <div class="bg-blue-400 text-center text-white mb-4 p-4">
       <%= link_to root_path, class: 'text-white' do %>
-        <h1 class='text-4xl text-white hover:text-black'> Blog do Julio </h1>
+        <h1 class='text-4xl text-white hover:text-black'>Blog do Julio</h1>
       <% end %>
-      <p class='text-lg'> Olá, esse é meu blog </p>
+      <p class='text-lg'>Olá, esse é meu blog</p>
     </div>
 
-    <div class=' justify-center mx-auto mb-4 px-10'>
+    <div class='justify-center mx-auto mb-4 px-10'>
+      <% flash.each do |type, message| %>
+        <div class="bg-green-400 text-white p-2 mb-2 rounded">
+          <p><%= message %></p>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
 
