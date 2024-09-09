@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     
      comment = Comment.create!(comments_params)
 
-     redirect_to comment.post, notice: 'foi enviado'
+     redirect_to comment.post, notice: 'Seu comentário foi enviado com sucesso!'
 
     
   end

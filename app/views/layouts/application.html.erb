@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TesteRuby</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", media: "all" %>
-    <%= javascript_pack_tag "application", "data-turbo-track": "reload" %>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
-  </head>
+<head>
+  <title>TesteRuby</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= javascript_pack_tag "application", "data-turbo-track": "reload" %>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
 
-  <body class="bg-gray-100">
-    <div class="bg-blue-400 text-center text-white mb-4 p-4">
-      <%= link_to root_path, class: 'text-white' do %>
-        <h1 class='text-4xl text-white hover:text-black'>Blog do Julio</h1>
-      <% end %>
-      <p class='text-lg'>Olá, esse é meu blog</p>
-    </div>
+<body class="bg-gray-100">
+  <div class="bg-blue-400 text-center text-white mb-4 p-4">
+    <%= link_to root_path, class: 'text-white' do %>
+      <h1 class='text-4xl hover:text-black'>Blog do Julio</h1>
+    <% end %>
+    <p class='text-lg'>Olá, esse é meu blog</p>
+  </div>
 
-    <div class='justify-center mx-auto mb-4 px-10'>
-      <% flash.each do |type, message| %>
-        <div class="bg-green-400 text-white p-2 mb-2 rounded">
-          <p><%= message %></p>
-        </div>
-      <% end %>
+  <div class=' mx-auto mb-4 px-10'>
+    <% flash.each do |type, message| %>
+      <div class="p-2 mb-4 rounded
+                  <%= flash_class(type) %>">
+        <p><%= message %></p>
+      </div>
+    <% end %>
 
-      <%= yield %>
-    </div>
+    <%= yield %>
+  </div>
 
-    <footer class='text-center bg-blue-500 p-4 text-white'>
-      Esse é meu primeiro Blog
-    </footer>
-  </body>
+  <footer class='text-center bg-blue-500 p-4 text-white'>
+    Esse é meu primeiro Blog
+  </footer>
+</body>
 </html>
